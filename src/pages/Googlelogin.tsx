@@ -1,13 +1,13 @@
 import { useGoogleLogin } from "@react-oauth/google";
-import React from "react";
-import { Button } from "~/components/ui/button";
+//import React from "react";
+//import { Button } from "~/components/ui/button";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../provider/authProvider";
 
 const Googlelogin = ({value}:any) => {
   const navigate = useNavigate();
-  const {currentUser, setCurrentUser} = useContext(AuthContext)
+  const {setCurrentUser} = useContext(AuthContext)
  
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {

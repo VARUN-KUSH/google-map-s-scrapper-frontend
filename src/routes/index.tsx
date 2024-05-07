@@ -9,7 +9,7 @@ import {useState} from "react"
 
 const Routes = () => {
   const { currentUser } = useAuth();
-  const [userState, setUserState] = useState<any>(currentUser)
+  const [userState] = useState<any>(currentUser)
 
   // Define public routes accessible to all users
   
@@ -42,19 +42,14 @@ const Routes = () => {
     {
       path: "/login",
       element: <Login/>,
-    },
-    {
-      path: "/home",
-      element: <Home/>
-    },
+    }
   ];
 
   // Combine and conditionally include routes based on authentication status
   const router = createBrowserRouter([
 
-    // ...(!userState ? routesForNotAuthenticatedOnly : []),
-    // ...routesForAuthenticatedOnly,
-    ...routesForNotAuthenticatedOnly
+    ...(!userState ? routesForNotAuthenticatedOnly : []),
+    ...routesForAuthenticatedOnly,
   ]);
 
   // Provide the router configuration using RouterProvider

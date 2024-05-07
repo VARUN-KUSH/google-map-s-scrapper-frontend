@@ -1,4 +1,4 @@
-import React from 'react';
+//import React from 'react';
 import Tables from '../tables/Tables';
 
 const Pagination = ({ posts}:any):any => {

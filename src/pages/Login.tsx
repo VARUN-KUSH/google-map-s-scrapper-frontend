@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import { FormLabel } from "../components/ui/form-label";
-import { Input, type InputProps } from "../components/ui/input";
-import { Button, type ButtonProps } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+//import { Button, type ButtonProps } from "../components/ui/button";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ type Inputs = {
 export const Login = () => {
   const { register, handleSubmit } = useForm<Inputs>();
   const navigate = useNavigate();
-  const {currentUser, setCurrentUser} = useContext(AuthContext)
+  const {setCurrentUser} = useContext(AuthContext)
   //setCurrentUser(false)
   
   const onSubmit: SubmitHandler<Inputs> = (data) => {

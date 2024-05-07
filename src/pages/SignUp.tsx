@@ -1,6 +1,6 @@
 import { FormLabel } from "../components/ui/form-label";
-import { Input, type InputProps } from "~/components/ui/input";
-import { Button, type ButtonProps } from "../components/ui/button";
+import { Input } from "~/components/ui/input";
+//import { Button, type ButtonProps } from "../components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../provider/authProvider";
@@ -12,7 +12,7 @@ import axios from "axios";
 export const Signup = () => {
     const { register, handleSubmit } = useForm<any>();
     const navigate = useNavigate();
-    const {currentUser, setCurrentUser} = useContext(AuthContext)
+    const {setCurrentUser} = useContext(AuthContext)
    
     const onSubmit: SubmitHandler<any> = (data) => {
         console.log(data);
@@ -30,9 +30,11 @@ export const Signup = () => {
             console.log(response.data);
             console.log(response.data.statusCode);
             const responseData = response.data;
-           
+            if(responseData) {
               setCurrentUser((prev:any) => !prev);
               navigate("/home"); // Use useNavigate and state for tokens
+            }
+              
            
           })
           .catch((error) => {

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import CsvDownloader from "react-csv-downloader";
 
 const Data = ({ post }: any) => {

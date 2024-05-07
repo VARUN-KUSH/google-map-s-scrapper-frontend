@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Loader = () => {
   return (
     <div className="flex items-center justify-center w-full  text-gray-900 dark:text-gray-100 dark:bg-gray-950">

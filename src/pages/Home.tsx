@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Input } from "~/components/ui/input";
-import { Button } from "~/components/ui/button";
+//import { Button } from "~/components/ui/button";
 import axios from "axios";
 import Loader from "../components/Loader/Loader";
 import { useState } from "react";
@@ -21,8 +21,8 @@ type Inputs = {
 export default function Home(): any {
   const [posts, setPosts] = useState<any>(null);
   const [loading, setLoading] = useState<any>(false);
-  const [currentPage, setCurrentPage] = useState<any>(1);
-  const [postsPerPage, setPostsPerPage] = useState<any>(10);
+  //const [currentPage, setCurrentPage] = useState<any>(1);
+  //const [postsPerPage, setPostsPerPage] = useState<any>(10);
   const { register, handleSubmit } = useForm<Inputs>();
   
 

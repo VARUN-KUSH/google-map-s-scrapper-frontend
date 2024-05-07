@@ -18,7 +18,7 @@ export const Signup = () => {
         console.log(data);
     
         const jsonData = JSON.stringify(data);
-        const url = "http://localhost:8000/api/v1/users/register";
+        const url = "/api/v1/users/register";
     
         axios
           .post<any>(url, jsonData, {

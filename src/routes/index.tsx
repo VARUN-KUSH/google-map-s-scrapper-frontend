@@ -20,7 +20,10 @@ const Routes = () => {
       path: "/",
       element: <ProtectedRoute />, // Wrap the component in ProtectedRoute
       children: [
-        
+        {
+          path: "/home",
+          element: <Home/>
+        }
     
         // {
         //   path: "/logout",
@@ -33,24 +36,24 @@ const Routes = () => {
   // Define routes accessible only to non-authenticated users
   const routesForNotAuthenticatedOnly = [
     {
+      path: "/",
+      element: <Login/>,
+    },
+    {
       path: "/signup",
       element: <Signup/>,
     },
     {
       path: "/login",
       element: <Login/>,
-    },
-    {
-      path: "/home",
-      element: <Home/>
     }
   ];
 
   // Combine and conditionally include routes based on authentication status
   const router = createBrowserRouter([
 
-    //...(!userState ? routesForNotAuthenticatedOnly : []),
-    ...routesForNotAuthenticatedOnly,
+    ...(!userState ? routesForNotAuthenticatedOnly : []),
+    ...routesForAuthenticatedOnly,
   ]);
 
   // Provide the router configuration using RouterProvider

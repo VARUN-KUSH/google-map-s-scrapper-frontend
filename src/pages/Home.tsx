@@ -31,7 +31,7 @@ export default function Home(): any {
     setPosts("")
     setLoading(true);
     const jsonData = JSON.stringify(data);
-    const url = "http://localhost:8000/api/v1/home/datascrape";
+    const url = "/api/v1/home/datascrape";
 
     axios
       .post(url, jsonData, {

@@ -31,7 +31,7 @@ export default function Home(): any {
     setPosts("")
     setLoading(true);
     const jsonData = JSON.stringify(data);
-    const url = "/api/v1/home/datascrape";
+    const url = "https://google-map-s-scrapper-backend.vercel.app/api/v1/home/datascrape";
 
     axios
       .post(url, jsonData, {

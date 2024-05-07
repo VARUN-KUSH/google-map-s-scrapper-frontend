@@ -8,7 +8,7 @@ import { AuthContext } from "../../provider/authProvider";
 
 const Logout = () => {
     //const navigate = useNavigate();
-    const {currentUser, setCurrentUser} = useContext(AuthContext)
+    const {setCurrentUser} = useContext(AuthContext)
     const handlelogout = () => {
       //const url = "http://localhost:8000/api/v1/users/logout";
 

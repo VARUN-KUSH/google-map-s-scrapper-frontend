@@ -8,7 +8,7 @@ import Buttons from "~/components/animated/button";
 import Pagination from "~/components/pagination/Pagination";
 import { FormLabel } from "../components/ui/form-label";
 import Logout from "~/components/Logout/Logout";
-import Download from "~/components/datadownload/Download";
+import Multiselectbutton from "~/components/multiselect/Multiselectbutton";
 
 
 
@@ -28,9 +28,10 @@ export default function Home(): any {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    setPosts("")
     setLoading(true);
     const jsonData = JSON.stringify(data);
-    const url = "https://google-map-s-scrapper-backend.vercel.app/api/v1/home/datascrape";
+    const url = "http://localhost:8000/api/v1/home/datascrape";
 
     axios
       .post(url, jsonData, {
@@ -115,8 +116,9 @@ export default function Home(): any {
         </div>
 
         <div>
-          {posts ? <Download posts={posts}/>: []}
+          {posts ? <Multiselectbutton posts={posts}/>: null}
         </div>
+        
         <div>
             {loading ? <Loader /> : posts ? <Pagination posts={posts} /> : []}
         </div>

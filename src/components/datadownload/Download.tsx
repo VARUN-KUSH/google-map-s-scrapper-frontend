@@ -3,12 +3,21 @@ import Data from './Data'
 import Excel from './Excel'
 import Json from './Json'
 
-const Download = ({posts}:any) => {
+const Download = ({posts, format}:any) => {
+  console.log(format)
+  if(format== "CSV") {
+    return (
+      <div className='flex items-center justify-center'> <Data post={posts}/></div>
+     
+    )
+  } else if(format=="JSON") {
+    return (
+      <div  className='flex items-center justify-center'><Json post={posts}/></div>
+    )
+  }
   return (
-    <div>
-        <Data post={posts}/>
+    <div  className='flex items-center justify-center'>
         <Excel  post={posts}/>
-        <Json post={posts}/>
     </div>
   )
 }

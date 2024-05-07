@@ -18,10 +18,10 @@ export const Signup = () => {
         console.log(data);
     
         const jsonData = JSON.stringify(data);
-        const url = "https://google-map-s-scrapper-backend.vercel.app//api/v1/users/register";
+        const url = "http://localhost:8000/api/v1/users/register";
     
         axios
-          .post(url, jsonData, {
+          .post<any>(url, jsonData, {
             headers: {
               "Content-Type": "application/json",
             },

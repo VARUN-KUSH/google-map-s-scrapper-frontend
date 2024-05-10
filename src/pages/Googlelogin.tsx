@@ -1,6 +1,4 @@
 import { useGoogleLogin } from "@react-oauth/google";
-//import React from "react";
-//import { Button } from "~/components/ui/button";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../provider/authProvider";

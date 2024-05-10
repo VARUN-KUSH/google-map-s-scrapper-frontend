@@ -31,7 +31,7 @@ export default function Home(): any {
     setPosts("")
     setLoading(true);
     const jsonData = JSON.stringify(data);
-    const url = "https://datascraping-api.vercel.app/api/v1/home/datascrape";
+    const url = "https://datascraping-api.onrender.com/api/v1/home/datascrape";
 
     axios
       .post(url, jsonData, {

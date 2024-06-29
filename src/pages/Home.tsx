@@ -31,7 +31,7 @@ export default function Home(): any {
     setPosts("")
     setLoading(true);
     const jsonData = JSON.stringify(data);
-    const url = "https://roaring-parfait-608a59.netlify.app/api/users/mapsscrape";
+    const url = "https://nextjsasbackendscrapper.vercel.app/api/users/mapsscrape";
 
     axios
       .post(url, jsonData, {
